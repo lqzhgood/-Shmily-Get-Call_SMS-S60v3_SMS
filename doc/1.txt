@@ -1,0 +1,21 @@
+
+
+Reconstruction of Active SNITS Messages
+
+Each file in the \ Private\ 1000484b\Mail2 corresponds to an active SMS message. Based on our analysis on the data to identify and retrieve relevant information such as the contact number, the contact name, the message contents, the GMT
+setting and the timestamp information, we observed that each file can be consistently parsed according to the format in   
+ 
+The "offset" column in Table 1 refers to the absolute offset location within the file. A plus sign prefix, if present, represents a relative offset from the end of the previous entry. 
+
+Variable-Length Length Field
+As shown in Tablelll a variable-length field is used for epresenting the length of the packet and message. This representation is very similar to the UTF-8 encoding, except that the lower bits were used here. If the lowest significant bit was set, the length field was extended to the following byte. Otherwise, the length field only occupied one byte. The following algorithm was designed to determine the actual packet and SMS message length.
+
+I. Read the first "length" byte. Take note of the lowest significant bit.
+2. Right-shift the byte by one bit. Assign this as the length.
+3. If the lowest significant bit was set, right-shift the length by another bit. Read the next byte, left-shift it by six bits and logical OR it with the length in step 2.
+4. Subtract one from the length to obtain the actual length.
+
+The remaining data may contain an optional "sent SMS" data block (for outgoing message type only) and other essential information such as the timestamp,contact number or contact name. Table shows the sent SMS data format and Table shows the remaining data following either the SMS header (and message data) or the "sent SMS" data block (if present). The actual length for the contact name, contact number, SMS centre number and sender number has to be computed by dividing the provided length information by four.
+
+Typically, the type of SMS (whether sent or received) can be determined from the message type indicator (1 byte at offset 16 as shown in Table ID. However, during our investigation, we observed a special case, which is the "P AIF message" . The PAIF message is a configuration request SMS, which was sent by the  smartphone to the mobile service provider automatically. Upon investigation,the header indicates a received SMS (message type Ox()4) but it contains the optional "sent SMS" data block. To handle this special scenario, we first determine the SMS message type through its type indicator byte, and then override it as a Sent SMS if the Sent SMS header block is present. Otherwise, the SMS message is deemed to be a received SMS. For an outgoing SMS, the "Sent flag" field within the "sent SMS" data block will determine whether the SMS has been sent. If it has not been sent, it will be classified as a draft SMS. Otherwise, it will be classified as a sent SMS. The timestamp represented the date and time as the number of microseconds since midnight, January 1st, 0 AD nominal Gregorian, as mentioned in 16 . An example of an active sent SMS message is shown in Figuremand an active received SMS message is shown in Figure
+

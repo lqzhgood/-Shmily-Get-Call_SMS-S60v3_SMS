@@ -1,0 +1,25 @@
+{
+    "name": "S60v3_SMS",
+    "version": "1.0.0",
+    "description": "",
+    "main": "readBuffer.js",
+    "dependencies": {
+        "dayjs": "^1.10.1",
+        "iconv-lite": "^0.6.2",
+        "jschardet": "^2.2.1",
+        "lodash": "^4.17.20",
+        "punycode": "^2.1.1"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "testOne": "nodemon --inspect ./test/testOne.js",
+        "fileToHexArr": "node .\\Tool\\fileToHexArr.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "engines": {
+        "node": ">=16.15.1",
+        "npm": ">=8.12.2"
+    }
+}

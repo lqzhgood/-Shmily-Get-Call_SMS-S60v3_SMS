@@ -1,0 +1,20 @@
+{
+    "name": "d",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "directories": {
+        "lib": "lib"
+    },
+    "scripts": {
+        "testN": "node ./test/testN.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "bignumber.js": "^9.0.1",
+        "dayjs": "^1.9.8",
+        "n-readlines-next": "^1.0.3"
+    }
+}
