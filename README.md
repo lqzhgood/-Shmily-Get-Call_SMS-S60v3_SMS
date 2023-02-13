@@ -62,3 +62,11 @@ http://devlib.symbian.slions.net/ <br/> <br/>
 可在 Google 图片中搜索 1000484B\Mail2 encoded 关键词查看试读
 https://books.google.com/books?id=7PO5BQAAQBAJ&pg=PA245&lpg=PA245&dq=1000484B%5CMail2+encoded&source=bl&ots=tZTcJej9Gt&sig=ACfU3U2XuBvQcfCncxEFynrPWfKP3A3ozw&hl=zh-CN&sa=X&ved=2ahUKEwiR7ZzHiZDtAhURc3AKHVT5AIkQ6AEwCXoECAEQAg#v=onepage&q=1000484B%5CMail2%20encoded&f=false
 ```
+
+## 感谢
+
+http://lqzhgood.github.io/Shmily/guide/other/thanks.html
+
+## 捐赠
+
+点击链接 http://lqzhgood.github.io/Shmily/guide/other/donation.html 看世界上最可爱的动物
